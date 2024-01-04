@@ -1,5 +1,5 @@
 
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -66,12 +66,12 @@ WSGI_APPLICATION = 'dcrm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'elderco',
-        'USER':'root',
-        'PASSWORD':'123456',
-        'HOST':'localhost',
-        'PORT':'3306',        
+        'ENGINE': os.environ.get('DB_DRIVER','django.db.backends.mysql'),
+        'NAME': os.environ.get('DJANGO_DB','elderco'),
+        'USER':os.environ.get('DJANGO_USER=','root'),
+        'PASSWORD':os.environ.get('DJANGO_PASSWORD','123456'),
+        'HOST': os.environ.get('DJANGO_HOST','db'),
+        'PORT':os.environ.get('DJANGO_PORT','3306'),        
     }
 }
 

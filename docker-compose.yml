@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/django
+    ports:
+      - "8000:8000"
+    container_name: django_container
+    environment:
+      - DJANGO_USER=root
+      - DJANGO_PASSWORD=123456
+      - DJANGO_DB=elderco
+      - DJANGO_PORT=3306
+      - DJANGO_HOST=db # Use the service name here
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: elderco
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: 123456
+    container_name: mysql_container
+    volumes:
+      - ./data/mysql/db:/var/lib/mysql
+    ports:
+      - "6000:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "db"]  # Use "localhost" as the host for healthcheck
+      timeout: 5s
+      retries: 2

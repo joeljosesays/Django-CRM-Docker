@@ -1,1 +1,5 @@
 data/mysql/db/mysql.sock
+Lib/
+Scripts/
+dcrm/
+pyvenv.cfg

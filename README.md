@@ -5,7 +5,7 @@
 <p>1) Introduction</br>
 2) Prerequisites</br>
 3) Getting Started</br>
-4) Docker Configuration</b>
+4) Docker Configuration</br>
 5) Run the Django App</br>
 6) Additional Notes</p>
 <div>

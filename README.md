@@ -1,5 +1,8 @@
 <html>
 <h1> Django CRM Docker App Documentation </h1>
+<div>
+<p>In this project, I developed a CRM (Customer Relationship Management) application using Django as the web framework and MySQL as the database. To enhance scalability, portability, and ease of deployment, the application was dockerized. Docker containers encapsulate the entire application along with its dependencies, ensuring consistency and eliminating potential environment-related issues. This containerized CRM app can be efficiently deployed across various environments, providing a seamless and reliable solution for managing customer interactions and data. The use of Docker contributes to a streamlined development and deployment process, making it easier to maintain and scale the CRM application.</p>
+</div>
 <div>  
 <h2>Table of Contents</h2>
 <p>1) Introduction</br>
